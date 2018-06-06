@@ -6,7 +6,7 @@ using namespace std;
 
 void corrida::startcorrida()
 {
-	while (checagem() == true)
+	while (this->checagem() == true)
 	{
 		for (int i = 0; i < (int)this->participantes.size(); i++)
 		{
@@ -14,7 +14,7 @@ void corrida::startcorrida()
 			this->participantes[i].somaDistPercorrida();
 		}
 	}
-	vervencedor();
+	this->vervencedor();
 }
 /**     
 *@brief Funcão que faz a checagem de qual sapo é o vencedor
@@ -79,4 +79,3 @@ void corrida::addParticipante(sapo novoParticipante)
 {
 	this->participantes.push_back(novoParticipante);
 }
-

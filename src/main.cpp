@@ -10,17 +10,16 @@
 #include "../include/sapo.hpp"
 #include "../include/cabecalho.hpp"
 #include "../include/corrida.hpp"
+#include "../include/lerArquivos.hpp"
 using namespace std;
 //g++ -o corrida -Wall -ansi -pedantic -O0 -g main.cpp sapo.cpp cabecalho.cpp
 
-int main(){
-	sapo jeronimo(1);
-	sapo bento(2);
-	corrida corrida;
-	corrida.addParticipante(jeronimo);
-	corrida.addParticipante(bento);
+int main()
+{
+	corrida Corrida;
 	cabecalho();
-	corrida.startcorrida();
-	
-return 0;
+	lerSapo(Corrida);
+	Corrida.startcorrida();
+
+	return 0;
 }

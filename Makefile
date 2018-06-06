@@ -1,7 +1,7 @@
 PROG = corrida
 CC = g++
 CPPFLAGS = -O0 -g -W -Wall -pedantic -std=gnu++11
-OBJS = main.o sapo.o cabecalho.o corrida.o
+OBJS = main.o sapo.o cabecalho.o corrida.o lerArquivos.o
 SRC = src/
 BUILD = build/
 BIN = bin/
@@ -19,5 +19,7 @@ cabecalho.o :
 	$(CC) $(CPPFLAGS) -c $(SRC)cabecalho.cpp
 corrida.o :
 	$(CC) $(CPPFLAGS) -c $(SRC)corrida.cpp
+lerArquivos.o :
+	$(CC) $(CPPFLAGS) -c $(SRC)lerArquivos.cpp
 clean:
 	rm -f *.o 
