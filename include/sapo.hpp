@@ -1,3 +1,10 @@
+/**
+* @author Natanael Fernandes T. Araujo
+* @file lerArquivos.hpp
+* @since 06/06/18
+* @date 06/06/18
+* @brief HPP da classe sapo
+*/
 #ifndef SAPO_HPP
 #define SAPO_HPP
 #include <iostream>

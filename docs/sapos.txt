@@ -22,3 +22,15 @@ Derrotas
 5
 Empates
 0
+Nome
+Enois
+QtPulos
+90
+Corridas
+20
+Vitorias
+10
+Derrotas
+10
+Empates
+0

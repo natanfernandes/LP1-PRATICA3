@@ -1,3 +1,8 @@
+/**
+*@file sapo.cpp
+*@brief Contém todos os metodos e atributos da classe sapo
+*@author Natanael Fernandes T. Araujo
+*/
 #include <iostream>
 #include <ctime>
 #include <vector>
@@ -10,14 +15,23 @@ std::mt19937 sapo::gen(sapo::rd());
 std::uniform_int_distribution<> sapo::dis(1, 10);
 
 /**     
-	*@brief Operado estático distancia total da corrida definido globalmente
-	*/
+*@brief Operador estático distancia total da corrida definido globalmente
+*/
 int sapo::distTotal = 30;
 
-int sapo::idGeral = 1;
 /**     
-	*@brief Construtor
-	*@param Este construtor não tem parâmetros
+*@brief Operador estático que serve para atribuir ids aos sapos
+*/
+int sapo::idGeral = 1;
+
+/**     
+	*@brief Construtor da classe sapo
+	*@param nomeSapoAux nome recebido para o sapo
+	*@param	qtProvasAux quantidade de provas disputadas pelo sapo que foi recebida
+	*@param vitoriasAux quantidade de vitorias do sapo que foi recebida
+	*@param derrotasAux quantidade de derrotas do sapo que foi recebida
+	*@param empatesAux quantidade de empates do sapo que foi recebida
+	*@param qtPulosTotalAux quantidade de pulos totais dado pelo sapo recebida
 	*/
 sapo::sapo(string nomeSapoAux,int qtProvasAux,int vitoriasAux,int derrotasAux,int empatesAux,int qtPulosTotalAux)
 {
@@ -49,7 +63,7 @@ int sapo::getnumPulos()
 	return this->qtPulos;
 }
 /**     
-	*@brief Funcão que retorna a distancia percorrida
+	*@brief Funcão que retorna a distancia percorrida pelo sapo
 	*@param Esta funcão nao recebe parâmetros
 	*/
 int sapo::getDistPercorrida()
@@ -57,50 +71,89 @@ int sapo::getDistPercorrida()
 	return this->distpercorrida;
 }
 /**     
-	*@brief Funcão que retorna o id
+	*@brief Funcão que retorna o id do sapo
 	*@param Esta funcao nao recebe parametros
 	*/
 int sapo::getID()
 {
 	return id;
 }
+
+/**     
+	*@brief Funcão que retorna o nome do sapo
+	*@param Esta funcao nao recebe parametros
+	*/
 string sapo::getNome(){
 	return this->nome;
 }
 
+/**     
+	*@brief Funcão que retorna a quantidade de provas disputadas pelo sapo
+	*@param Esta funcao nao recebe parametros
+	*/
 int sapo::getQtProvas(){
 	return this->qtProvas;
 }
 
+/**     
+	*@brief Funcão que retorna a quantidade de vitorias do sapo
+	*@param Esta funcao nao recebe parametros
+	*/
 int sapo::getVitorias(){
 	return this->vitorias;
 }
 
+
+/**     
+	*@brief Funcão que retorna a quantidade de derrotas do sapo
+	*@param Esta funcao nao recebe parametros
+	*/
 int sapo::getDerrotas(){
 	return this->derrotas;
 }
 
+/**     
+	*@brief Funcão que retorna a quantidade de empates do sapo
+	*@param Esta funcao nao recebe parametros
+	*/
 int sapo::getEmpates(){
 	return this->empates;
 }
 
+/**     
+	*@brief Funcão que retorna a quantidade total de pulos dados pelo sapo
+	*@param Esta funcao nao recebe parametros
+	*/
 int sapo::getQtPulosTotal(){
 	return this->qtPulosTotal;
 }
+
+/**     
+	*@brief Funcão que atribui valor as vitorias do sapo
+	*@param vitoriasAux quantidade de vitorias a ser atribuida
+	*/
 void sapo::setVitorias(int vitoriasAux){
 	vitorias = vitoriasAux;
 }
 
+/**     
+	*@brief Funcão que atribui valor as derrotas do sapo
+	*@param derrotasAux quantidade de derrotas a ser atribuida
+	*/
 void sapo::setDerrotas(int derrotasAux){
 	derrotas = derrotasAux;
 }
 
+/**     
+	*@brief Funcão que atribui valor a quantidade de pulos totais do sapo
+	*@param qtPulosTotalAux quantidade total de pulos a ser atribuida
+	*/
 void sapo::setQtPulosTotal(int qtPulosTotalAux){
 	qtPulosTotal = qtPulosTotalAux;
 }
 /**     
 	*@brief Funcão que atribui a distância percorrida
-	*@param d É a variável que recebe o valor da distância percorrida para repassar ao atributo privado
+	*@param distAux É a variável que recebe o valor da distância percorrida para repassar ao atributo privado
 	*/
 void sapo::setDistPercorrida(int distAux)
 {
@@ -113,12 +166,11 @@ void sapo::setDistPercorrida(int distAux)
 	*/
 void sapo::infosFimCorrida()
 {
-	cout << "Sapo de ID = " << this->getID() <<" com nome = " << this->getNome() <<" pulou " << this->getnumPulos() << " vezes e a sua distancia percorrida foi " << this->getDistPercorrida() << endl;
+	cout << "O Sapo " << this->getNome()<<" (ID ="<< this->getID() <<")"<<" pulou " << this->getnumPulos() << " vezes e a distancia percorrida nesta corrida foi " << this->getDistPercorrida() << endl;
 }
 /**     
 	*@brief Funcão que faz os sapos pularem
 	*@details A funcão gera um valor de distancia randomico para cada sapo pular e enquanto nenhum sapo antigir a distancia total a corrida não acaba
-	*@param sapos Classe que tem todas os atributos do sapo
 	*/
 void sapo::pular()
 {
@@ -132,6 +184,9 @@ void sapo::pular()
 	cout << "-------------------------------------------------" << endl;
 }
 
+/**     
+	*@brief Funcão que soma a distancia que está sendo percorrida pelo sapo
+	*/
 void sapo::somaDistPercorrida()
 {
 	int d = 0;
@@ -150,6 +205,9 @@ void sapo::IncNumPulos()
 	qtPulos++;
 }
 
+/**     
+	*@brief Funcão que mostra todas as informações do sapo
+	*/
 void sapo::infosGerais(){
-	cout << "Nome : "<<this->getNome()<< " | ID : " <<this->getID()<<" | Provas Disputadas : "<<this->getQtProvas() <<" | Vitorias : "<<this->getVitorias() <<" | Derrotas : " <<this->getDerrotas() <<" | Empates : " <<this->getEmpates() << " | Total de Pulos : "<<this->getQtPulosTotal() <<endl;
+	cout << "---Nome : "<<this->getNome()<< " | ID : " <<this->getID()<<" | Provas Disputadas : "<<this->getQtProvas() <<" | Vitorias : "<<this->getVitorias() <<" | Derrotas : " <<this->getDerrotas() <<" | Empates : " <<this->getEmpates() << " | Total de Pulos : "<<this->getQtPulosTotal() <<endl;
 }

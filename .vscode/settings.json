@@ -25,6 +25,7 @@
         "vector": "cpp",
         "cmath": "cpp",
         "random": "cpp",
-        "fstream": "cpp"
+        "fstream": "cpp",
+        "string": "cpp"
     }
 }

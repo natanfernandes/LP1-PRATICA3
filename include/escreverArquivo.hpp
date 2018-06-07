@@ -18,7 +18,7 @@ using namespace std;
 #include "../include/pista.hpp"	
     
 
-void escreverArquivoSapos(sapo Sapo);
-void escreverArquivosPistas();
+void escreverArquivoSapos(corrida &Corrida);
+void escreverArquivoPistas(corrida &Corrida);
 
 #endif

@@ -1,5 +1,15 @@
+/**
+*@file lerArquivos.cpp
+*@brief Contém o contéudo das funções de ler sapos e pistas
+*@author Natanael Fernandes T. Araujo
+*/
 #include "../include/lerArquivos.hpp"
 
+
+/**     
+*@brief Funcão que lê do arquivo os sapos
+*@param Corrida ponteiro pra um objeto da classe corrida
+*/
 void lerArquivoSapos(corrida &Corrida){
     string linha,pulosAux,provasAux,empatesAux,derrotasAux,vitoriasAux;
     ifstream myFileSapos("docs/sapos.txt");
@@ -41,11 +51,16 @@ void lerArquivoSapos(corrida &Corrida){
     myFileSapos.close();
 }
 
+
+/**     
+*@brief Funcão que lê do arquivo as pistas
+*@param Corrida ponteiro pra um objeto da classe corrida
+*/
 void lerArquivoPistas(corrida &Corrida){
-    string linha,distanciaAux;
+    string linha,distanciaAux,qtCorridasAux;
     ifstream myFilePistas("docs/pistas.txt");
     string nomePista;
-    int distanciaPista;
+    int distanciaPista,qtCorridasPista;
     if(!myFilePistas.is_open()){
         cout << "Erro na abertura do arquivo sapos.txt !"<<endl;
         return;
@@ -56,10 +71,14 @@ void lerArquivoPistas(corrida &Corrida){
         if(linha == "Nome"){
             getline(myFilePistas,nomePista);
         }
+        else if(linha == "QtCorridas"){
+            getline(myFilePistas,qtCorridasAux);
+            qtCorridasPista = stod(qtCorridasAux);
+        }
         else if(linha == "Distancia"){
             getline(myFilePistas,distanciaAux);
             distanciaPista = stod(distanciaAux);
-            pista NovaPista(distanciaPista,nomePista);
+            pista NovaPista(distanciaPista,nomePista,qtCorridasPista);
             Corrida.addPista(NovaPista);
         }
     }

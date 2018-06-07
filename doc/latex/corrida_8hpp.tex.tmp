@@ -1,0 +1,33 @@
+\hypertarget{corrida_8hpp}{}\section{include/corrida.hpp File Reference}
+\label{corrida_8hpp}\index{include/corrida.\+hpp@{include/corrida.\+hpp}}
+
+
+H\+PP da classe corrida.  
+
+
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include \char`\"{}../include/sapo.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../include/pista.\+hpp\char`\"{}}\\*
+Include dependency graph for corrida.\+hpp\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classcorrida}{corrida}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+H\+PP da classe corrida. 
+
+\begin{DoxyAuthor}{Author}
+Natanael Fernandes T. Araujo
+\end{DoxyAuthor}
+\begin{DoxySince}{Since}
+06/06/18 
+\end{DoxySince}
+\begin{DoxyDate}{Date}
+06/06/18 
+\end{DoxyDate}

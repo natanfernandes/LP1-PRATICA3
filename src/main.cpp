@@ -1,6 +1,6 @@
 /**
 *@file main.cpp
-*@brief Corrida de sapos
+*@brief Main Arquivo da Corrida de Sapos
 *@author Natanael Fernandes T. Araujo
 */
 #include <iostream>
@@ -13,13 +13,10 @@
 #include "../include/corrida.hpp"
 #include "../include/lerArquivos.hpp"
 using namespace std;
-//g++ -o corrida -Wall -ansi -pedantic -O0 -g main.cpp sapo.cpp cabecalho.cpp
+
 
 int main()
 {
 	interface();
-	
-	//Corrida.startcorrida();
-
 	return 0;
 }

@@ -1,0 +1,42 @@
+digraph "src/main.cpp"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="src/main.cpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="iostream",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="cstdlib",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="ctime",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="string",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="../include/sapo.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sapo_8hpp_source.html"];
+  Node6 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="random",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node6 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="vector",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node6 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="../include/pista.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pista_8hpp.html",tooltip="HPP da classe pista. "];
+  Node9 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="../include/interface.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_8hpp.html",tooltip="HPP da interface do programa. "];
+  Node1 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="../include/corrida.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$corrida_8hpp.html",tooltip="HPP da classe corrida. "];
+  Node11 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node11 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node11 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node12 [color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="../include/lerArquivos.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$lerArquivos_8hpp.html",tooltip="HPP das funções que leem arquivos. "];
+  Node12 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node12 -> Node13 [color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="fstream",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node12 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node12 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node12 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
+  Node12 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node12 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+}
