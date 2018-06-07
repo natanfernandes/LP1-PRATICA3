@@ -38,11 +38,12 @@ void corrida::vervencedor()
 	{
 		if (this->participantes[i].getDistPercorrida() >= sapo::distTotal)
 		{
-			cout << "O sapo	 " << this->participantes[i].getID() << " atingiu o ponto de chegada primeiro!" << endl
+			cout << "O sapo "<<this->participantes[i].getNome() << "(ID = " << this->participantes[i].getID() << ") atingiu o ponto de chegada primeiro!" << endl
 				 << endl;
-			int vencedor = this->participantes[i].getID();
-			setChegouPrimeiro(vencedor);
-			this->participantes[i].infos();
+			int vencedorID = this->participantes[i].getID();
+			string vencedorNome = this->participantes[i].getNome();
+			setChegouPrimeiro(vencedorID,vencedorNome);
+			this->participantes[i].infosFimCorrida();
 			printavencedor();
 			break;
 		}
@@ -55,27 +56,72 @@ void corrida::vervencedor()
 void corrida::printavencedor()
 {
 	cout << "|------------------------------------------------------|" << endl;
-	cout << "|           O vencedor foi o sapo : " << getChegouPrimeiro() << "                  |" << endl;
+	cout << "|           O vencedor foi o sapo : " << getChegouPrimeiroNome() <<"(ID = "<< getChegouPrimeiroID() << ")   |" << endl;
 	cout << "|------------------------------------------------------|" << endl;
 }
 /**     
 *@brief Funcão que atribui o sapo que chegou primeiro
 *@param winner Variavel que recebe o id do sapo que chegou primeiro
 */
-void corrida::setChegouPrimeiro(int winner)
+void corrida::setChegouPrimeiro(int winnerID,string winnerNome)
 {
-	chegouprimeiro = winner;
+	chegouprimeiroID = winnerID;
+	chegouprimeiroNome = winnerNome;
 }
 /**     
 *@brief Funcão que retorna o sapo que chegou primeiro
 *@param Esta funcão nao recebe parâmetros
 */
-int corrida::getChegouPrimeiro()
+int corrida::getChegouPrimeiroID()
 {
-	return chegouprimeiro;
+	return chegouprimeiroID;
+}
+string corrida::getChegouPrimeiroNome()
+{
+	return chegouprimeiroNome;
 }
 
 void corrida::addParticipante(sapo novoParticipante)
 {
 	this->participantes.push_back(novoParticipante);
+}
+
+void corrida::addPista(pista novaPista){
+	this->pistas.push_back(novaPista);
+}	
+
+void corrida::criarSapo(){
+	cin.ignore();
+	cout << "-Digite o nome do sapo : ";
+	string nomeSapo;
+	getline(cin, nomeSapo);
+	cout << "-Digite a quantidade de provas que esse sapo já disputou : ";
+	int qtProvas;
+	cin >> qtProvas;
+	cin.ignore();
+	cout << "-Digite a quantidade de vitórias desse sapo : ";
+	int vitorias;
+	cin >> vitorias;
+	cin.ignore();
+	cout << "-Digite a quantidade de derrotas desse sapo : ";
+	int derrotas;
+	cin >> derrotas;
+	cin.ignore();
+	cout << "-Digite a quantidade de empates desse sapo : ";
+	int empates;
+	cin >> empates;
+	cin.ignore();
+	cout << "-Digite a quantidade total de pulos que esse sapo já deu : ";
+	int qtPulos;
+	cin >> qtPulos;
+	cin.ignore();
+	sapo NovoSapo(nomeSapo,qtProvas,vitorias,derrotas,empates,qtPulos);
+	addParticipante(NovoSapo);
+	escreverArquivoSapos(NovoSapo);
+}
+
+void corrida::verEstatisticasSapos(){
+	for(int i = 0; i < (int)this->participantes.size(); i++){
+		this->participantes[i].infosGerais();
+	}
 }

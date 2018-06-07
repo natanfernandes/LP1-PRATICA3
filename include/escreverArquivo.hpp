@@ -1,12 +1,13 @@
 /**
 * @author Natanael Fernandes T. Araujo
-* @file lerArquivos.hpp
+* @file escreverArquivos.hpp
 * @since 06/06/18
 * @date 06/06/18
-* @brief HPP das funções que leem arquivos
+* @brief HPP das funções que escrevem arquivos
 */
-#ifndef LER_H
-#define LER_H
+
+#ifndef ESCREVER_H
+#define ESCREVER_H
 #include <vector>
 #include <fstream>
 #include <iostream>
@@ -16,8 +17,8 @@ using namespace std;
 #include "../include/sapo.hpp"
 #include "../include/pista.hpp"	
     
-void lerArquivoSapos(corrida &Corrida);
-void lerArquivoPistas(corrida &Corrida);
 
+void escreverArquivoSapos(sapo Sapo);
+void escreverArquivosPistas();
 
 #endif

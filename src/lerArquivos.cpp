@@ -1,6 +1,6 @@
 #include "../include/lerArquivos.hpp"
 
-void lerSapo(corrida &Corrida){
+void lerArquivoSapos(corrida &Corrida){
     string linha,pulosAux,provasAux,empatesAux,derrotasAux,vitoriasAux;
     ifstream myFileSapos("docs/sapos.txt");
 
@@ -39,4 +39,28 @@ void lerSapo(corrida &Corrida){
         }
     }
     myFileSapos.close();
+}
+
+void lerArquivoPistas(corrida &Corrida){
+    string linha,distanciaAux;
+    ifstream myFilePistas("docs/pistas.txt");
+    string nomePista;
+    int distanciaPista;
+    if(!myFilePistas.is_open()){
+        cout << "Erro na abertura do arquivo sapos.txt !"<<endl;
+        return;
+    }
+
+    while(!myFilePistas.eof()){
+        getline(myFilePistas,linha);
+        if(linha == "Nome"){
+            getline(myFilePistas,nomePista);
+        }
+        else if(linha == "Distancia"){
+            getline(myFilePistas,distanciaAux);
+            distanciaPista = stod(distanciaAux);
+            pista NovaPista(distanciaPista,nomePista);
+            Corrida.addPista(NovaPista);
+        }
+    }
 }

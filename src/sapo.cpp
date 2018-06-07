@@ -111,7 +111,7 @@ void sapo::setDistPercorrida(int distAux)
 	*@details A funcão diz a distancia percorrida e a quantidade de pulos de cada sapo
 	*@param sapos Classe que tem todas os atributos do sapo	
 	*/
-void sapo::infos()
+void sapo::infosFimCorrida()
 {
 	cout << "Sapo de ID = " << this->getID() <<" com nome = " << this->getNome() <<" pulou " << this->getnumPulos() << " vezes e a sua distancia percorrida foi " << this->getDistPercorrida() << endl;
 }
@@ -128,7 +128,7 @@ void sapo::pular()
 
 	this->IncNumPulos();
 	this->valordospulos.push_back(v);
-	cout << "Sapo " << this->getID() << " pulou : " << v << endl;
+	cout << "Sapo " << this->getNome() << "(ID ="<<this->getID() << ") pulou : " << v << endl;
 	cout << "-------------------------------------------------" << endl;
 }
 
@@ -148,4 +148,8 @@ void sapo::somaDistPercorrida()
 void sapo::IncNumPulos()
 {
 	qtPulos++;
+}
+
+void sapo::infosGerais(){
+	cout << "Nome : "<<this->getNome()<< " | ID : " <<this->getID()<<" | Provas Disputadas : "<<this->getQtProvas() <<" | Vitorias : "<<this->getVitorias() <<" | Derrotas : " <<this->getDerrotas() <<" | Empates : " <<this->getEmpates() << " | Total de Pulos : "<<this->getQtPulosTotal() <<endl;
 }

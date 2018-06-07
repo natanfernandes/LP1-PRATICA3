@@ -44,7 +44,8 @@ class sapo
 	int getEmpates();
 	int getQtPulosTotal();
 	//OTHER METHODS
-	void infos();
+	void infosFimCorrida();
+	void infosGerais();
 	void pular();
 	void somaDistPercorrida();
 	void IncNumPulos();

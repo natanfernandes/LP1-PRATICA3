@@ -8,7 +8,8 @@
 #include <ctime>
 #include <string>
 #include "../include/sapo.hpp"
-#include "../include/cabecalho.hpp"
+#include "../include/pista.hpp"
+#include "../include/interface.hpp"
 #include "../include/corrida.hpp"
 #include "../include/lerArquivos.hpp"
 using namespace std;
@@ -16,10 +17,9 @@ using namespace std;
 
 int main()
 {
-	corrida Corrida;
-	cabecalho();
-	lerSapo(Corrida);
-	Corrida.startcorrida();
+	interface();
+	
+	//Corrida.startcorrida();
 
 	return 0;
 }
